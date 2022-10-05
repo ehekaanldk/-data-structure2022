@@ -15,10 +15,12 @@ Balanced Binary Tree
  */
 class Solution {
 public:
+    // balance 상태 구하기 함수
     bool isBalanced(TreeNode* root) {
         if(root==NULL) {return true;}
         return abs(height(root->left)-height(root->right))<=1 && isBalanced(root->left) && isBalanced(root->right);
     }
+    // 높이 구하기 함수
     int height(TreeNode* node){
         if(node==NULL) {return -1;}
         if(node->right==NULL && node->left==NULL) {return 0;}
